@@ -1,4 +1,8 @@
-import { SET_GAME_STARTED, SET_INSTRUCTIONS_EXPANDED } from "../actions/types";
+import {
+  SET_GAME_STARTED,
+  SET_INSTRUCTIONS_EXPANDED,
+  FEETCH_DECK_RESULT,
+} from "../actions/types";
 
 export const DEFAULT_SETTINGS = {
   gameStarted: false,
@@ -18,6 +22,13 @@ export const rootReducer = (state = DEFAULT_SETTINGS, action) => {
       return {
         ...state,
         instructionsExpanded: action.instructionsExpanded,
+      };
+    case FEETCH_DECK_RESULT:
+      const { remaining, deck_id } = action;
+      return {
+        ...state,
+        remaining,
+        deck_id,
       };
 
     default:
