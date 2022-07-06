@@ -29,7 +29,7 @@ const Instructions = props => {
 }
 
 const mapStateToProps = (state) => {
-    return { instructionsExpanded: state.instructionsExpanded };
+    return { instructionsExpanded: state.settings.instructionsExpanded };
   };
   
   const mapDispatchToProps = (dispatch) => {
